@@ -1,0 +1,19 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "automatyzacja testów cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "automatyzacja",
+    "cypress",
+    "testy"
+  ],
+  "author": "Damian Kamyszek",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.1.0"
+  }
+}
