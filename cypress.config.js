@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "http://www.automationpractice.pl",
+    baseUrl: "http://www.automationpractice.pl/",
     redirectionLimit: 3,
     retries: {
       runMode: 1,
