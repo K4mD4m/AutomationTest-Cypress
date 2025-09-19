@@ -1,8 +1,10 @@
 /// <reference types="cypress" />
 
+import Base from "../pages/Base";
+
 describe("Checkbox Test Case", () => {
     it("Click on tab Women", () => {
-        cy.visit("/");
+        Base.openHomePage();
         cy.get('a[title="Women"]').click();
         cy.url().should("include", "id_category=3&controller=category");
     })
