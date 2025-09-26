@@ -1,16 +1,20 @@
 /// <reference types="cypress" />
+import Base from "../pages/Base";
+import Search from "../pages/Search";
+import ResultPage from "../pages/ResultPage";
+import { searchPhrase, notFoundProduct } from "../fixtures/searchData.json";
 
 describe("Type text in search box", () => {
     it("Type text", () => {
-        cy.visit("/");
-        cy.get('#search_query_top').type("Example text");
-        cy.get('#search_query_top').should("have.value", "Example text");
+        Base.openHomePage();
+        Search.typeSearchPhrase(searchPhrase);
+        Search.searchBox.should("have.value", searchPhrase);
         cy.wait(3000);
-        cy.get('#search_query_top').clear();
+        Search.clearSearchPhrase();
         cy.wait(3000);
-        cy.get('#search_query_top').type("Example text {enter}");
-        cy.get("p.alert").should("be.visible").and("include.text", "No results were found for your search");
-        cy.get('#search_query_top').should("have.class", "search_query");
-        cy.get('#search_query_top').should("have.css", "margin-right", "1px");
+        Search.typeSearchPhrase(`${searchPhrase} {enter}`)
+        ResultPage.searchAlert.should("be.visible").and("include.text", notFoundProduct);
+        Search.searchBox.should("have.class", "search_query");
+        Search.searchBox.should("have.css", "margin-right", "1px");
     });
 });
