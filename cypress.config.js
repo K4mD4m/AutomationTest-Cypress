@@ -17,5 +17,6 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     waitForAnimations: true,
     testIsolation: false,
+    theme: "dark",
   },
 });
